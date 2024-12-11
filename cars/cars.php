@@ -1,3 +1,24 @@
+<?php
+include '../config_db.php';
+$sql = "SELECT * FROM cars";
+$result = mysqli_query($conn, $sql);
+
+// Check if query was successful and there are results
+// if ($result) {
+//     while ($row = mysqli_fetch_assoc($result)) {
+//         // Output each field of the current row
+//         echo '<pre>';
+//         print_r(value: $row);  // This will print the row data in an array format
+//         echo '</pre>';
+//     }
+
+//     foreach ($result as $row) {
+//         print_r(value: $row); 
+//         }
+// }
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +51,8 @@
       <h1 class="text-5xl font-bold mb-4">Our Cars</h1>
       <p class="text-xl mb-8">Explore our wide range of vehicles to suit your needs.</p>
 
-      <div class="text-sm sm:text-base grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-[60%] sm:w-[90%] mx-auto">
+      <div
+        class="text-sm sm:text-base grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-[60%] sm:w-[90%] mx-auto">
 
         <div class="bg-white text-black p-4 rounded-lg shadow-lg">
           <p><b>Registration Number:</b> ABC123</p>
@@ -39,12 +61,14 @@
           <p><b>Year:</b> 2020</p>
           <div class="mt-4 flex justify-between">
             <form action="edit_car.php" method="POST" class="inline-block">
-              <button type="submit" name="car_id" value="1" class="bg-yellow-500 text-black py-2 px-4 rounded hover:bg-yellow-600">
+              <button type="submit" name="car_id" value="1"
+                class="bg-yellow-500 text-black py-2 px-4 rounded hover:bg-yellow-600">
                 <i class="fas fa-edit"></i> Edit
               </button>
             </form>
             <form action="delete_car.php" method="POST" class="inline-block">
-              <button type="submit" name="car_id" value="1" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">
+              <button type="submit" name="car_id" value="1"
+                class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">
                 <i class="fas fa-trash-alt"></i> Delete
               </button>
             </form>
