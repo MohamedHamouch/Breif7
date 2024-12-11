@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cars - RentDrive</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body class="bg-gray-100">
 
   <header class="bg-blue-800 text-white py-4 h-[10vh]">
@@ -26,8 +29,28 @@
     <div class="container mx-auto">
       <h1 class="text-5xl font-bold mb-4">Our Cars</h1>
       <p class="text-xl mb-8">Explore our wide range of vehicles to suit your needs.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-       
+
+      <div class="text-sm sm:text-base grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-[60%] sm:w-[90%] mx-auto">
+
+        <div class="bg-white text-black p-4 rounded-lg shadow-lg">
+          <p><b>Registration Number:</b> ABC123</p>
+          <p><b>Brand:</b> Toyota</p>
+          <p><b>Model:</b> Corolla</p>
+          <p><b>Year:</b> 2020</p>
+          <div class="mt-4 flex justify-between">
+            <form action="edit_car.php" method="POST" class="inline-block">
+              <button type="submit" name="car_id" value="1" class="bg-yellow-500 text-black py-2 px-4 rounded hover:bg-yellow-600">
+                <i class="fas fa-edit"></i> Edit
+              </button>
+            </form>
+            <form action="delete_car.php" method="POST" class="inline-block">
+              <button type="submit" name="car_id" value="1" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">
+                <i class="fas fa-trash-alt"></i> Delete
+              </button>
+            </form>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -49,4 +72,5 @@
   </footer>
 
 </body>
+
 </html>
