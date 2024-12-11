@@ -1,23 +1,7 @@
 <?php
 include '../config_db.php';
 $sql = "SELECT * FROM cars";
-$result = mysqli_query($conn, $sql);
-
-// Check if query was successful and there are results
-// if ($result) {
-//     while ($row = mysqli_fetch_assoc($result)) {
-//         // Output each field of the current row
-//         echo '<pre>';
-//         print_r(value: $row);  // This will print the row data in an array format
-//         echo '</pre>';
-//     }
-
-//     foreach ($result as $row) {
-//         print_r(value: $row); 
-//         }
-// }
-
-
+$cars = mysqli_query($conn, $sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,32 +34,38 @@ $result = mysqli_query($conn, $sql);
     <div class="container mx-auto">
       <h1 class="text-5xl font-bold mb-4">Our Cars</h1>
       <p class="text-xl mb-8">Explore our wide range of vehicles to suit your needs.</p>
+      <?php
 
-      <div
-        class="text-sm sm:text-base grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-[60%] sm:w-[90%] mx-auto">
+      if (mysqli_num_rows($cars) > 0) {
+        echo '<div class="text-sm sm:text-base grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-[60%] sm:w-[90%] mx-auto">';
 
-        <div class="bg-white text-black p-4 rounded-lg shadow-lg">
-          <p><b>Registration Number:</b> ABC123</p>
-          <p><b>Brand:</b> Toyota</p>
-          <p><b>Model:</b> Corolla</p>
-          <p><b>Year:</b> 2020</p>
-          <div class="mt-4 flex justify-between">
-            <form action="edit_car.php" method="POST" class="inline-block">
-              <button type="submit" name="car_id" value="1"
-                class="bg-yellow-500 text-black py-2 px-4 rounded hover:bg-yellow-600">
-                <i class="fas fa-edit"></i> Edit
-              </button>
-            </form>
-            <form action="delete_car.php" method="POST" class="inline-block">
-              <button type="submit" name="car_id" value="1"
-                class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">
-                <i class="fas fa-trash-alt"></i> Delete
-              </button>
-            </form>
-          </div>
-        </div>
+        while ($car = mysqli_fetch_assoc($cars)) {
+          echo '<div class="bg-white text-black p-4 rounded-lg shadow-lg">';
+          echo '<p><b>Registration Number:</b> ' . $car['Reg_number'] . '</p>';
+          echo '<p><b>Brand:</b> ' . $car['Brand'] . '</p>';
+          echo '<p><b>Model:</b> ' . $car['Model'] . '</p>';
+          echo '<p><b>Year:</b> ' . $car['Year'] . '</p>';
+          echo '<div class="mt-4 flex justify-between">';
+          echo '<form action="edit_car.php" method="POST" class="inline-block">';
+          echo '<button type="submit" name="car_id" value="' . $car['Reg_number'] . '" class="bg-yellow-500 text-black py-2 px-4 rounded hover:bg-yellow-600">';
+          echo '<i class="fas fa-edit"></i> Edit';
+          echo '</button>';
+          echo '</form>';
+          echo '<form action="delete_car.php" method="POST" class="inline-block">';
+          echo '<button type="submit" name="car_id" value="' . $car['Reg_number'] . '" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">';
+          echo '<i class="fas fa-trash-alt"></i> Delete';
+          echo '</button>';
+          echo '</form>';
+          echo '</div>';
+          echo '</div>';
+        }
+        echo '</div>';
+      } else {
+        echo '<p class="text-yellow-400 text-2xl mt-16 font-bold">NO CARS YET</p>';
+      }
+      ?>
 
-      </div>
+    </div>
     </div>
   </section>
 
