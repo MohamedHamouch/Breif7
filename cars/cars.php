@@ -24,7 +24,7 @@ $cars = mysqli_query($conn, $sql);
       <nav class="space-x-6 hidden sm:flex">
         <a href="../index.php" class="hover:text-yellow-500">Home</a>
         <a href="cars.php" class="text-yellow-500">Cars</a>
-        <a href="#clients" class="hover:text-yellow-500">Clients</a>
+        <a href="../clients/clients.php" class="hover:text-yellow-500">Clients</a>
         <a href="#contracts" class="hover:text-yellow-500">Contracts</a>
       </nav>
     </div>
@@ -75,8 +75,9 @@ $cars = mysqli_query($conn, $sql);
         <img src="your-logo-path.png" alt="RentDrive Logo" class="h-8">
       </a>
       <div class="space-x-6">
+        <a href="../index.php" class="text-sm hover:text-yellow-500">Home</a>
         <a href="cars.php" class="text-sm hover:text-yellow-500">Cars</a>
-        <a href="#clients" class="text-sm hover:text-yellow-500">Clients</a>
+        <a href="../clients/clients.php" class="text-sm hover:text-yellow-500">Clients</a>
         <a href="#contracts" class="text-sm hover:text-yellow-500">Contracts</a>
       </div>
     </div>

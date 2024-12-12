@@ -15,8 +15,8 @@
       </a>
       <nav class="space-x-6 hidden sm:flex">
         <a href="index.php" class="text-yellow-500">Home</a>
-        <a href="/cars/cars.php" class="hover:text-yellow-500">Cars</a>
-        <a href="#clients" class="hover:text-yellow-500">Clients</a>
+        <a href="cars/cars.php" class="hover:text-yellow-500">Cars</a>
+        <a href="clients/clients.php" class="hover:text-yellow-500">Clients</a>
         <a href="#contracts" class="hover:text-yellow-500">Contracts</a>
       </nav>
     </div>
@@ -36,9 +36,9 @@
         <img src="your-logo-path.png" alt="RentDrive Logo" class="h-8">
       </a>
       <div class="space-x-6">
-        <a href="index.php" class="text-sm hover:text-yellow-500">Cars</a>
-        <a href="cars.php" class="text-sm hover:text-yellow-500">Cars</a>
-        <a href="#clients" class="text-sm hover:text-yellow-500">Clients</a>
+        <a href="index.php" class="text-sm hover:text-yellow-500">Home</a>
+        <a href="cars/cars.php" class="text-sm hover:text-yellow-500">Cars</a>
+        <a href="clients/clients.php" class="text-sm hover:text-yellow-500">Clients</a>
         <a href="#contracts" class="text-sm hover:text-yellow-500">Contracts</a>
       </div>
     </div>
