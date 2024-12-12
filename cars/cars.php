@@ -16,7 +16,7 @@ $cars = mysqli_query($conn, $sql);
 
 <body class="bg-gray-100">
 
-  <header class="bg-blue-800 text-white py-4 h-[10vh]">
+  <header class="bg-blue-800 text-white p-4 h-[10vh]">
     <div class="container mx-auto flex items-center justify-between">
       <a href="#" class="text-3xl font-bold">
         <img src="your-logo-path.png" alt="RentDrive Logo" class="h-10">
@@ -25,7 +25,7 @@ $cars = mysqli_query($conn, $sql);
         <a href="../index.php" class="hover:text-yellow-500">Home</a>
         <a href="cars.php" class="text-yellow-500">Cars</a>
         <a href="../clients/clients.php" class="hover:text-yellow-500">Clients</a>
-        <a href="#contracts" class="hover:text-yellow-500">Contracts</a>
+        <a href="../contracts/contracts.php" class="hover:text-yellow-500">Contracts</a>
       </nav>
     </div>
   </header>
@@ -37,22 +37,22 @@ $cars = mysqli_query($conn, $sql);
       <?php
 
       if (mysqli_num_rows($cars) > 0) {
-        echo '<div class="text-sm sm:text-base grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-[60%] sm:w-[90%] mx-auto">';
+        echo '<div class="text-sm sm:text-base grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 w-[60%] sm:w-[85%] mx-auto">';
 
         while ($car = mysqli_fetch_assoc($cars)) {
-          echo '<div class="bg-white text-black p-4 rounded-lg shadow-lg">';
+          echo '<div class="bg-white text-black p-2 py-3 flex flex-col gap-1 rounded-lg shadow-lg">';
           echo '<p><b>Registration Number:</b> ' . $car['Reg_number'] . '</p>';
           echo '<p><b>Brand:</b> ' . $car['Brand'] . '</p>';
           echo '<p><b>Model:</b> ' . $car['Model'] . '</p>';
           echo '<p><b>Year:</b> ' . $car['Year'] . '</p>';
           echo '<div class="mt-4 flex justify-between">';
           echo '<form action="edit_car.php" method="POST" class="inline-block">';
-          echo '<button type="submit" name="car_id" value="' . $car['Reg_number'] . '" class="bg-yellow-500 text-black py-2 px-4 rounded hover:bg-yellow-600">';
+          echo '<button type="submit" name="car_id" value="' . $car['Reg_number'] . '" class="bg-yellow-500 text-black text-sm py-2 px-3 rounded hover:bg-yellow-600">';
           echo '<i class="fas fa-edit"></i> Edit';
           echo '</button>';
           echo '</form>';
           echo '<form action="delete_car.php" method="POST" class="inline-block">';
-          echo '<button type="submit" name="car_id" value="' . $car['Reg_number'] . '" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">';
+          echo '<button type="submit" name="car_id" value="' . $car['Reg_number'] . '" class="bg-red-500 text-white text-sm py-2 px-3 rounded hover:bg-red-600">';
           echo '<i class="fas fa-trash-alt"></i> Delete';
           echo '</button>';
           echo '</form>';
@@ -78,7 +78,7 @@ $cars = mysqli_query($conn, $sql);
         <a href="../index.php" class="text-sm hover:text-yellow-500">Home</a>
         <a href="cars.php" class="text-sm hover:text-yellow-500">Cars</a>
         <a href="../clients/clients.php" class="text-sm hover:text-yellow-500">Clients</a>
-        <a href="#contracts" class="text-sm hover:text-yellow-500">Contracts</a>
+        <a href="../contracts/contracts.php" class="text-sm hover:text-yellow-500">Contracts</a>
       </div>
     </div>
     <div class="text-center mt-4">

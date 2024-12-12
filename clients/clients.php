@@ -16,16 +16,16 @@ $clients = mysqli_query($conn, $sql);
 
 <body>
 
-  <header class="bg-blue-800 text-white py-4 h-[10vh]">
+  <header class="bg-blue-800 text-white p-4 h-[10vh]">
     <div class="container mx-auto flex items-center justify-between">
       <a href="#" class="text-3xl font-bold">
         <img src="your-logo-path.png" alt="RentDrive Logo" class="h-10">
       </a>
       <nav class="space-x-6 hidden sm:flex">
         <a href="../index.php" class="hover:text-yellow-500">Home</a>
-        <a href="../cars/cars.php" class="text-yellow-500">Cars</a>
-        <a href="clients.php" class="hover:text-yellow-500">Clients</a>
-        <a href="#contracts" class="hover:text-yellow-500">Contracts</a>
+        <a href="../cars/cars.php" class="hover:text-yellow-500">Cars</a>
+        <a href="clients.php" class="text-yellow-500">Clients</a>
+        <a href="../contracts/contracts.php" class="hover:text-yellow-500">Contracts</a>
       </nav>
     </div>
   </header>
@@ -33,10 +33,10 @@ $clients = mysqli_query($conn, $sql);
   <section class="py-8 bg-blue-600 text-white text-center min-h-[75vh]">
     <div class="container mx-auto">
       <h1 class="text-5xl font-bold mb-4">Our Clients</h1>
-      <p class="text-xl mb-8">Explore our wide range of vehicles to suit your needs.</p>
+      <p class="text-xl mb-8">Discover the diverse clientele we serve.</p>
 
       <div
-        class="grid grid-cols-[5%,25%,25%,30%,5%,5%] items-center bg-gray-200 p-2 gap-2 sm:gap-4 font-semibold text-gray-700 mx-auto w-[85%]">
+        class="grid grid-cols-[5%,25%,30%,30%,5%,5%] items-center bg-gray-200 p-2 font-semibold text-gray-700 mx-auto w-[85%]">
         <div>ID</div>
         <div>Name</div>
         <div>ADDRESS</div>
@@ -48,7 +48,7 @@ $clients = mysqli_query($conn, $sql);
       <?php
       if (mysqli_num_rows($clients) > 0) {
         while ($client = mysqli_fetch_assoc($clients)) {
-          echo  '<div class="grid grid-cols-[5%,25%,25%,30%,5%,5%] items-center border-b p-2 gap-2 sm:gap-4 bg-white hover:bg-gray-100 mx-auto w-[85%] text-gray-900">';
+          echo  '<div class="grid grid-cols-[5%,25%,30%,30%,5%,5%] items-center border-b p-2 bg-white hover:bg-gray-100 mx-auto w-[85%] text-gray-900">';
           echo '<p>'.$client['ID'].'</p>';
           echo '<p>'.$client['Name'].'</p>';
           echo '<p>'.$client['Address'].'</p>';
@@ -57,7 +57,7 @@ $clients = mysqli_query($conn, $sql);
           <i class="fa-solid fa-pen-to-square text-yellow-500"></i>
         </button>
         <button>
-          <i class="fa-solid fa-trash text-red-700"></i>
+          <i class="fa-solid fa-trash text-red-500"></i>
         </button>
         </div>';
 
@@ -80,7 +80,7 @@ $clients = mysqli_query($conn, $sql);
         <a href="../index.php" class="text-sm hover:text-yellow-500">Home</a>
         <a href="../cars/cars.php" class="text-sm hover:text-yellow-500">Cars</a>
         <a href="clients.php" class="text-sm hover:text-yellow-500">Clients</a>
-        <a href="#contracts" class="text-sm hover:text-yellow-500">Contracts</a>
+        <a href="../contracts/contracts.php" class="text-sm hover:text-yellow-500">Contracts</a>
       </div>
     </div>
     <div class="text-center mt-4">

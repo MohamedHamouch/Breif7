@@ -8,7 +8,7 @@
 </head>
 <body class="bg-gray-100">
 
-  <header class="bg-blue-800 text-white py-4 h-[10vh]">
+  <header class="bg-blue-800 text-white p-4 h-[10vh]">
     <div class="container mx-auto flex items-center justify-between">
       <a href="#" class="text-3xl font-bold">
         <img src="your-logo-path.png" alt="RentDrive Logo" class="h-10">
@@ -17,7 +17,7 @@
         <a href="index.php" class="text-yellow-500">Home</a>
         <a href="cars/cars.php" class="hover:text-yellow-500">Cars</a>
         <a href="clients/clients.php" class="hover:text-yellow-500">Clients</a>
-        <a href="#contracts" class="hover:text-yellow-500">Contracts</a>
+        <a href="contracts/contracts.php" class="hover:text-yellow-500">Contracts</a>
       </nav>
     </div>
   </header>
@@ -39,7 +39,7 @@
         <a href="index.php" class="text-sm hover:text-yellow-500">Home</a>
         <a href="cars/cars.php" class="text-sm hover:text-yellow-500">Cars</a>
         <a href="clients/clients.php" class="text-sm hover:text-yellow-500">Clients</a>
-        <a href="#contracts" class="text-sm hover:text-yellow-500">Contracts</a>
+        <a href="contracts/contracts.php" class="text-sm hover:text-yellow-500">Contracts</a>
       </div>
     </div>
     <div class="text-center mt-4">
