@@ -56,8 +56,13 @@ $clients = mysqli_query($conn, $sql);
           echo '<p>' . $client['Name'] . '</p>';
           echo '<p>' . $client['Address'] . '</p>';
           echo '<p>' . $client['Phone'] . '</p>';
-          echo '<button name="client_id" value="' . $client['ID'] . '" class="edit-client-btn bg-transparent border-0 p-0">';
-          echo '<i class="fa-solid fa-pen-to-square text-yellow-500"></i></button>';
+          echo '<button name="client_id"  value="' . $client['ID'] . '" 
+                data-cname="' . $client['Name'] . '" 
+                data-caddress="' . $client['Address'] . '" 
+                data-cphone="' . $client['Phone'] . '" 
+                class="edit-client-btn bg-transparent border-0 p-0">';
+          echo '<i class="fa-solid fa-pen-to-square text-yellow-500"></i>';
+          echo '</button>';
           echo '<form action="handel_forms/delete_client.php" method="POST" class="inline-block">';
           echo '<button type="submit" name="client_id" value="' . $client['ID'] . '" class="bg-transparent border-0 p-0">';
           echo '<i class="fa-solid fa-trash text-red-500"></i></button>';
