@@ -18,14 +18,14 @@ $contracts = mysqli_query($conn, $sql);
 <body>
   <header class="bg-blue-800 text-white p-4 h-[10vh]">
     <div class="container mx-auto flex items-center justify-between">
-      <a href="#" class="text-3xl font-bold">
+      <a href="../index.php" class="font-bold">
         <img src="your-logo-path.png" alt="RentDrive Logo" class="h-10">
       </a>
       <nav class="space-x-6 hidden sm:flex">
         <a href="../index.php" class="hover:text-yellow-500">Home</a>
         <a href="../cars/cars.php" class="hover:text-yellow-500">Cars</a>
         <a href="../clients/clients.php" class="hover:text-yellow-500">Clients</a>
-        <a href="contracts.php" class="text-yellow-500">Contracts</a>
+        <a href="#" class="text-yellow-500">Contracts</a>
       </nav>
     </div>
   </header>
@@ -78,6 +78,7 @@ $contracts = mysqli_query($conn, $sql);
       } else {
         echo '<p class="text-yellow-400 text-2xl mt-16 font-bold">NO CLIENTS YET</p>';
       }
+      mysqli_close($conn);
       ?>
 
     </div>
@@ -85,7 +86,7 @@ $contracts = mysqli_query($conn, $sql);
 
   <footer class="bg-gray-800 text-white py-8 h-[15vh]">
     <div class="container mx-auto flex justify-between items-center">
-      <a href="#" class="text-3xl font-bold">
+      <a href="../index.php" class="font-bold">
         <img src="your-logo-path.png" alt="RentDrive Logo" class="h-8">
       </a>
       <div class="space-x-6">
@@ -95,7 +96,7 @@ $contracts = mysqli_query($conn, $sql);
         <a href="contracts.php" class="text-sm hover:text-yellow-500">Contracts</a>
       </div>
     </div>
-    <div class="text-center mt-4">
+    <div class="text-center pt-4">
       <p>&copy; 2024 RentDrive. All rights reserved.</p>
     </div>
   </footer>

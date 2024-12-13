@@ -18,12 +18,12 @@ $cars = mysqli_query($conn, $sql);
 
   <header class="bg-blue-800 text-white p-4 h-[10vh]">
     <div class="container mx-auto flex items-center justify-between">
-      <a href="#" class="text-3xl font-bold">
+      <a href="../index.php" class="font-bold">
         <img src="your-logo-path.png" alt="RentDrive Logo" class="h-10">
       </a>
       <nav class="space-x-6 hidden sm:flex">
         <a href="../index.php" class="hover:text-yellow-500">Home</a>
-        <a href="cars.php" class="text-yellow-500">Cars</a>
+        <a href="#" class="text-yellow-500">Cars</a>
         <a href="../clients/clients.php" class="hover:text-yellow-500">Clients</a>
         <a href="../contracts/contracts.php" class="hover:text-yellow-500">Contracts</a>
       </nav>
@@ -148,7 +148,7 @@ $cars = mysqli_query($conn, $sql);
 
   <footer class="bg-gray-800 text-white py-8 h-[15vh]">
     <div class="container mx-auto flex justify-between items-center">
-      <a href="#" class="text-3xl font-bold">
+      <a href="../index.php" class="font-bold">
         <img src="your-logo-path.png" alt="RentDrive Logo" class="h-8">
       </a>
       <div class="space-x-6">
