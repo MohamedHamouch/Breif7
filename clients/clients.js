@@ -21,11 +21,18 @@ closeAddBtn.addEventListener('click', () => {
 const closeEditBtn = document.querySelector('#close-edit-btn');
 const editClientPopup = document.querySelector('#edit-client-popup');
 const editClientBtns = document.querySelectorAll('.edit-client-btn');
+const submitEditBtn = document.querySelector('#submit-edit');
 
 editClientBtns.forEach(btn => {
   btn.addEventListener('click', () => {
+    
     editClientPopup.classList.toggle('flex');
     editClientPopup.classList.toggle('hidden');
+
+    submitEditBtn.name = btn.name;
+    submitEditBtn.value = btn.value;
+
+
   })
 });
 

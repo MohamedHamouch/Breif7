@@ -111,7 +111,7 @@ $clients = mysqli_query($conn, $sql);
         <i class="fa-solid fa-circle-xmark text-3xl"></i>
       </button>
 
-      <form action="handel_forms/edit_client.php" method="POST" class="flex flex-col gap-6">
+      <form action="handel_forms/edit_client.php" method="POST" class="flex flex-col gap-6" id="edit-Form">
         <fieldset>
           <label for="name" class="block text-gray-800 font-semibold">Name</label>
           <input type="text" id="name" name="name" class="w-96 p-2 border rounded-lg" required>
