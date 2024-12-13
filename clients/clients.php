@@ -112,7 +112,7 @@ $clients = mysqli_query($conn, $sql);
   <section id="edit-client-popup"
     class="hidden fixed w-full h-full items-center justify-center top-0 backdrop-blur-md bg-black/70">
     <div class="items-center justify-center flex flex-col gap-4 bg-gray-200 py-8 px-12 rounded-lg">
-      <button class="text-red-500 hover:text-red-700" id="close-edit-btn">
+      <button class="text-red-500 hover:text-red-700" id="close-edit-popup">
         <i class="fa-solid fa-circle-xmark text-3xl"></i>
       </button>
 

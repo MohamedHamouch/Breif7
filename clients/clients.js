@@ -18,7 +18,7 @@ closeAddBtn.addEventListener('click', () => {
 
 //EDIT
 
-const closeEditBtn = document.querySelector('#close-edit-btn');
+const closeEditBtn = document.querySelector('#close-edit-popup');
 const editClientPopup = document.querySelector('#edit-client-popup');
 const editClientBtns = document.querySelectorAll('.edit-client-btn');
 const submitEditBtn = document.querySelector('#submit-edit');
@@ -27,10 +27,10 @@ const inputs = editForm.querySelectorAll('input');
 // console.log(editClientBtns);
 
 
-editClientBtns.forEach(btn => {
+editClientBtns.forEach(editBtn => {
   editBtn.addEventListener('click', () => {
 
-    const { cname, caddress, cphone } = btn.dataset;
+    const { cname, caddress, cphone } = editBtn.dataset;
 
     editClientPopup.classList.toggle('flex');
     editClientPopup.classList.toggle('hidden');
