@@ -56,15 +56,12 @@ $clients = mysqli_query($conn, $sql);
           echo '<p>' . $client['Name'] . '</p>';
           echo '<p>' . $client['Address'] . '</p>';
           echo '<p>' . $client['Phone'] . '</p>';
-          echo '<form action="edit_client.php" method="POST" class="inline-block">';
-          echo '<button type="submit" name="client_id" value="' . $client['ID'] . '" class="bg-transparent border-0 p-0">';
-          echo '<i class="fa-solid fa-pen-to-square text-yellow-500"></i></button></form>';
-
-          echo '<form action="delete_client.php" method="POST" class="inline-block">';
+          echo '<button name="client_id" value="' . $client['ID'] . '" class="edit-client-btn bg-transparent border-0 p-0">';
+          echo '<i class="fa-solid fa-pen-to-square text-yellow-500"></i></button>';
+          echo '<form action="handel_forms/delete_client.php" method="POST" class="inline-block">';
           echo '<button type="submit" name="client_id" value="' . $client['ID'] . '" class="bg-transparent border-0 p-0">';
           echo '<i class="fa-solid fa-trash text-red-500"></i></button>';
           echo '</form></div>';
-
         }
 
       } else {
@@ -76,6 +73,7 @@ $clients = mysqli_query($conn, $sql);
     </div>
   </section>
 
+  <!-- add clien form -->
   <section id="add-client-popup"
     class="hidden fixed w-full h-full items-center justify-center top-0 backdrop-blur-md bg-black/70">
     <div class="items-center justify-center flex flex-col gap-4 bg-gray-200 py-8 px-12 rounded-lg">
@@ -104,6 +102,37 @@ $clients = mysqli_query($conn, $sql);
       </form>
     </div>
   </section>
+
+  <!-- edit client form -->
+  <section id="edit-client-popup"
+    class="hidden fixed w-full h-full items-center justify-center top-0 backdrop-blur-md bg-black/70">
+    <div class="items-center justify-center flex flex-col gap-4 bg-gray-200 py-8 px-12 rounded-lg">
+      <button class="text-red-500 hover:text-red-700" id="close-edit-btn">
+        <i class="fa-solid fa-circle-xmark text-3xl"></i>
+      </button>
+
+      <form action="handel_forms/edit_client.php" method="POST" class="flex flex-col gap-6">
+        <fieldset>
+          <label for="name" class="block text-gray-800 font-semibold">Name</label>
+          <input type="text" id="name" name="name" class="w-96 p-2 border rounded-lg" required>
+        </fieldset>
+
+        <fieldset>
+          <label for="address" class="block text-gray-800 font-semibold">Address</label>
+          <input type="text" id="address" name="address" class="w-96 p-2 border rounded-lg" required>
+        </fieldset>
+
+        <fieldset>
+          <label for="phone" class="block text-gray-800 font-semibold">Phone</label>
+          <input type="tel" id="phone" name="phone" class="w-96 p-2 border rounded-lg" required>
+        </fieldset>
+
+        <button type="submit" id="submit-edit"
+          class="bg-blue-500 text-white font-semibold py-2 px-4 w-1/3 rounded-lg hover:bg-blue-600">Confirm</button>
+      </form>
+    </div>
+  </section>
+
 
   <footer class="bg-gray-800 text-white py-8 h-[15vh]">
     <div class="container mx-auto flex justify-between items-center">
