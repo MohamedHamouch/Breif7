@@ -35,7 +35,7 @@ $clients = mysqli_query($conn, $sql);
       <h1 class="text-5xl font-bold mb-4">Our Clients</h1>
       <p class="text-xl mb-8">Discover the diverse clientele we serve.</p>
       <button id="add-client-btn"
-        class="px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-500 p-5 xl:p-3 w-fit m-auto mb-8"><i
+        class="px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-400 p-5 xl:p-3 w-fit m-auto mb-8"><i
           class="fa-solid fa-user-plus"></i> Add New Client</button>
 
       <div
@@ -69,12 +69,12 @@ $clients = mysqli_query($conn, $sql);
       } else {
         echo '<p class="text-yellow-400 text-2xl mt-16 font-bold">NO CLIENTS YET</p>';
       }
+      mysqli_close($conn);
       ?>
 
     </div>
   </section>
 
-  <!-- Adding player form -->
   <section id="add-client-popup"
     class="hidden fixed w-full h-full items-center justify-center top-0 backdrop-blur-md bg-black/70">
     <div class="items-center justify-center flex flex-col gap-4 bg-gray-200 py-8 px-12 rounded-lg">
@@ -82,24 +82,21 @@ $clients = mysqli_query($conn, $sql);
         <i class="fa-solid fa-circle-xmark text-3xl"></i>
       </button>
 
-      <form class="flex flex-col gap-6">
-        <div>
+      <form action="handel_forms/add_client.php" method="POST" class="flex flex-col gap-6">
+        <fieldset>
           <label for="name" class="block text-gray-800 font-semibold">Name</label>
           <input type="text" id="name" name="name" class="w-96 p-2 border rounded-lg" required>
-          <!-- Adjust width here -->
-        </div>
+        </fieldset>
 
-        <div>
+        <fieldset>
           <label for="address" class="block text-gray-800 font-semibold">Address</label>
           <input type="text" id="address" name="address" class="w-96 p-2 border rounded-lg" required>
-          <!-- Adjust width here -->
-        </div>
+        </fieldset>
 
-        <div>
+        <fieldset>
           <label for="phone" class="block text-gray-800 font-semibold">Phone</label>
           <input type="tel" id="phone" name="phone" class="w-96 p-2 border rounded-lg" required>
-          <!-- Adjust width here -->
-        </div>
+        </fieldset>
 
         <button type="submit"
           class="bg-blue-500 text-white font-semibold py-2 px-4 w-1/3 rounded-lg hover:bg-blue-600">Confirm</button>
@@ -123,6 +120,8 @@ $clients = mysqli_query($conn, $sql);
       <p>&copy; 2024 RentDrive. All rights reserved.</p>
     </div>
   </footer>
+
+  <script src="clients.js"></script>
 </body>
 
 </html>
