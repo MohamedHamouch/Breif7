@@ -49,19 +49,13 @@ $cars = mysqli_query($conn, $sql);
           echo '<p><b>Brand:</b> ' . $car['Brand'] . '</p>';
           echo '<p><b>Model:</b> ' . $car['Model'] . '</p>';
           echo '<p><b>Year:</b> ' . $car['Year'] . '</p>';
-          echo '<div class="mt-4 flex justify-between">';
-          echo '<form action="edit_car.php" method="POST" class="inline-block">';
+          echo '<div class="mt-4 flex justify-between"><form action="edit_car.php" method="POST" class="inline-block">';
           echo '<button type="submit" name="car_id" value="' . $car['Reg_number'] . '" class="bg-yellow-500 text-black text-sm py-2 px-3 rounded hover:bg-yellow-600">';
-          echo '<i class="fas fa-edit"></i> Edit';
-          echo '</button>';
-          echo '</form>';
-          echo '<form action="delete_car.php" method="POST" class="inline-block">';
-          echo '<button type="submit" name="car_id" value="' . $car['Reg_number'] . '" class="bg-red-500 text-white text-sm py-2 px-3 rounded hover:bg-red-600">';
-          echo '<i class="fa-solid fa-trash"></i> Delete';
-          echo '</button>';
-          echo '</form>';
-          echo '</div>';
-          echo '</div>';
+          echo '<i class="fas fa-edit"></i> Edit</button></form>';
+          echo '<form action="handel_forms/delete_car.php" method="POST" class="inline-block">';
+          echo '<button type="submit" name="registration_number" value="' . $car['Reg_number'] . '" class="bg-red-500 text-white text-sm py-2 px-3 rounded hover:bg-red-600">';
+          echo '<i class="fa-solid fa-trash"></i> Delete</button></form>';
+          echo '</div></div>';
         }
         echo '</div>';
       } else {
