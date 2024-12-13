@@ -56,13 +56,14 @@ $clients = mysqli_query($conn, $sql);
           echo '<p>' . $client['Name'] . '</p>';
           echo '<p>' . $client['Address'] . '</p>';
           echo '<p>' . $client['Phone'] . '</p>';
-          echo '<button>
-          <i class="fa-solid fa-pen-to-square text-yellow-500"></i>
-        </button>
-        <button>
-          <i class="fa-solid fa-trash text-red-500"></i>
-        </button>
-        </div>';
+          echo '<form action="edit_client.php" method="POST" class="inline-block">';
+          echo '<button type="submit" name="client_id" value="' . $client['ID'] . '" class="bg-transparent border-0 p-0">';
+          echo '<i class="fa-solid fa-pen-to-square text-yellow-500"></i></button></form>';
+
+          echo '<form action="delete_client.php" method="POST" class="inline-block">';
+          echo '<button type="submit" name="client_id" value="' . $client['ID'] . '" class="bg-transparent border-0 p-0">';
+          echo '<i class="fa-solid fa-trash text-red-500"></i></button>';
+          echo '</form></div>';
 
         }
 
