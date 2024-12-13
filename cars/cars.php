@@ -34,6 +34,10 @@ $cars = mysqli_query($conn, $sql);
     <div class="container mx-auto">
       <h1 class="text-5xl font-bold mb-4">Our Cars</h1>
       <p class="text-xl mb-8">Explore our wide range of vehicles to suit your needs.</p>
+
+      <button id="add-car-btn"
+        class="px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-400 p-5 xl:p-3 w-fit m-auto mb-8"><span
+          class="font-bold">+</span><i class="fa-solid fa-car"></i> Add New Car</button>
       <?php
 
       if (mysqli_num_rows($cars) > 0) {
@@ -53,7 +57,7 @@ $cars = mysqli_query($conn, $sql);
           echo '</form>';
           echo '<form action="delete_car.php" method="POST" class="inline-block">';
           echo '<button type="submit" name="car_id" value="' . $car['Reg_number'] . '" class="bg-red-500 text-white text-sm py-2 px-3 rounded hover:bg-red-600">';
-          echo '<i class="fas fa-trash-alt"></i> Delete';
+          echo '<i class="fa-solid fa-trash"></i> Delete';
           echo '</button>';
           echo '</form>';
           echo '</div>';
@@ -63,9 +67,46 @@ $cars = mysqli_query($conn, $sql);
       } else {
         echo '<p class="text-yellow-400 text-2xl mt-16 font-bold">NO CARS YET</p>';
       }
+      mysqli_close($conn);
       ?>
 
     </div>
+    </div>
+  </section>
+
+  <section id="add-car-popup"
+    class="hidden fixed w-full h-full items-center justify-center top-0 backdrop-blur-md bg-black/70">
+    <div class="items-center justify-center flex flex-col gap-4 bg-gray-200 py-8 px-12 rounded-lg">
+      <button class="text-red-500 hover:text-red-700" id="close-add-popup">
+        <i class="fa-solid fa-circle-xmark text-3xl"></i>
+      </button>
+
+      <form action="handel_forms/add_car.php" method="POST" class="flex flex-col gap-6">
+        <fieldset>
+          <label for="registration_number" class="block text-gray-800 font-semibold">Registration Number</label>
+          <input type="text" id="registration_number" name="registration_number" class="w-96 p-2 border rounded-lg"
+            required>
+        </fieldset>
+
+        <fieldset>
+          <label for="brand" class="block text-gray-800 font-semibold">Brand</label>
+          <input type="text" id="brand" name="brand" class="w-96 p-2 border rounded-lg" required>
+        </fieldset>
+
+        <fieldset>
+          <label for="model" class="block text-gray-800 font-semibold">Model</label>
+          <input type="text" id="model" name="model" class="w-96 p-2 border rounded-lg" required>
+        </fieldset>
+
+        <fieldset>
+          <label for="year" class="block text-gray-800 font-semibold">Year</label>
+          <input type="number" id="year" name="year" class="w-96 p-2 border rounded-lg" required>
+        </fieldset>
+
+        <button type="submit"
+          class="bg-blue-500 text-white font-semibold py-2 px-4 w-1/3 rounded-lg hover:bg-blue-600">Confirm</button>
+      </form>
+
     </div>
   </section>
 
@@ -85,7 +126,7 @@ $cars = mysqli_query($conn, $sql);
       <p>&copy; 2024 RentDrive. All rights reserved.</p>
     </div>
   </footer>
-
+      <script src="cars.js"></script>
 </body>
 
 </html>
