@@ -10,10 +10,10 @@
 
 <body class="bg-gray-100">
 
-  <header class="bg-blue-800 text-white p-4 h-[10vh]">
+  <header class="bg-blue-800 text-white p-4 h-[10vh] flex items-center justify-center">
     <div class="container mx-auto flex items-center justify-between">
       <a href="#" class="font-bold">
-        <img src="your-logo-path.png" alt="RentDrive Logo" class="h-10">
+        <img src="assets/rentcar1.png" alt="RentDrive Logo" class="h-12">
       </a>
       <nav class="space-x-6 hidden sm:flex">
         <a href="index.php" class="text-yellow-500">Home</a>
@@ -28,7 +28,8 @@
     <div>
       <h1 class="text-5xl font-bold mb-4">Welcome to RentDrive</h1>
       <p class="text-xl mb-8">Your trusted partner for car rentals</p>
-      <a href="cars/cars.php" class="inline-block px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg">Explore Our
+      <a href="cars/cars.php" class="inline-block px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg">Explore
+        Our
         Cars</a>
     </div>
   </section>

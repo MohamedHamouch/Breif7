@@ -16,10 +16,10 @@ $cars = mysqli_query($conn, $sql);
 
 <body class="bg-gray-100">
 
-  <header class="bg-blue-800 text-white p-4 h-[10vh]">
+  <header class="bg-blue-800 text-white p-4 h-[10vh] flex items-center justify-center">
     <div class="container mx-auto flex items-center justify-between">
       <a href="../index.php" class="font-bold">
-        <img src="your-logo-path.png" alt="RentDrive Logo" class="h-10">
+        <img src="../assets/rentcar1.png" alt="RentDrive Logo" class="h-12">
       </a>
       <nav class="space-x-6 hidden sm:flex">
         <a href="../index.php" class="hover:text-yellow-500">Home</a>
@@ -36,8 +36,8 @@ $cars = mysqli_query($conn, $sql);
       <p class="text-xl mb-8">Explore our wide range of vehicles to suit your needs.</p>
 
       <button id="add-car-btn"
-        class="px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-400 p-5 xl:p-3 w-fit m-auto mb-8"><span
-          class="font-bold">+</span><i class="fa-solid fa-car"></i> Add New Car</button>
+        class="px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-400 p-5 xl:p-3 w-fit m-auto mb-8"><i
+          class="fa-solid fa-plus"></i><i class="fa-solid fa-car"></i> Add New Car</button>
       <?php
 
       if (mysqli_num_rows($cars) > 0) {

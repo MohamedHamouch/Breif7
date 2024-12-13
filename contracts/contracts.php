@@ -12,14 +12,16 @@ $contracts = mysqli_query($conn, $sql);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contracts - RentDrive</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 </head>
 
 <body>
-  <header class="bg-blue-800 text-white p-4 h-[10vh]">
+
+  <header class="bg-blue-800 text-white p-4 h-[10vh] flex items-center justify-center">
     <div class="container mx-auto flex items-center justify-between">
       <a href="../index.php" class="font-bold">
-        <img src="your-logo-path.png" alt="RentDrive Logo" class="h-10">
+        <img src="../assets/rentcar1.png" alt="RentDrive Logo" class="h-12">
+      </a>
       </a>
       <nav class="space-x-6 hidden sm:flex">
         <a href="../index.php" class="hover:text-yellow-500">Home</a>
@@ -34,6 +36,9 @@ $contracts = mysqli_query($conn, $sql);
     <div class="container mx-auto">
       <h1 class="text-5xl font-bold mb-4">Our Contracts</h1>
       <p class="text-xl mb-8">Explore the contracts we've established with our clientsgit.</p>
+      <button id="add-client-btn"
+        class="px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-400 p-5 xl:p-3 w-fit m-auto mb-8"><i
+          class="fa-solid fa-file-circle-plus"></i> Start Contract</button>
 
       <div
         class="grid grid-cols-[5%,20%,20%,10%,20%,15%,5%,5%] items-center bg-gray-200 p-2 font-semibold text-gray-700 mx-auto w-[85%]">

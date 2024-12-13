@@ -16,10 +16,10 @@ $clients = mysqli_query($conn, $sql);
 
 <body>
 
-  <header class="bg-blue-800 text-white p-4 h-[10vh]">
+  <header class="bg-blue-800 text-white p-4 h-[10vh] flex items-center justify-center">
     <div class="container mx-auto flex items-center justify-between">
       <a href="../index.php" class="font-bold">
-        <img src="your-logo-path.png" alt="RentDrive Logo" class="h-10">
+        <img src="../assets/rentcar1.png" alt="RentDrive Logo" class="h-12">
       </a>
       <nav class="space-x-6 hidden sm:flex">
         <a href="../index.php" class="hover:text-yellow-500">Home</a>
