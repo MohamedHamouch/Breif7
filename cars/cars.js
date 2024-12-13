@@ -32,8 +32,8 @@ editCarBtns.forEach(editBtn => {
     editCarPopup.classList.toggle('hidden');
     editCarPopup.classList.toggle('flex');
 
-    submitEditBtn.name = editBtn.name;
-    submitEditBtn.value = editBtn.value;
+    // submitEditBtn.name = editBtn.name;
+    // submitEditBtn.value = editBtn.value;
 
     inputs.forEach(input => {
 
