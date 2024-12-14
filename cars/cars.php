@@ -146,10 +146,10 @@ $cars = mysqli_query($conn, $sql);
   </section>
 
 
-  <footer class="bg-gray-800 text-white py-8 h-[15vh]">
+  <footer class="bg-gray-800 text-white py-8 px-4 h-[15vh]">
     <div class="container mx-auto flex justify-between items-center">
       <a href="../index.php" class="font-bold">
-        <img src="your-logo-path.png" alt="RentDrive Logo" class="h-8">
+        <img src="../assets/rentcar1.png" alt="RentDrive Logo" class="h-8">
       </a>
       <div class="space-x-6">
         <a href="../index.php" class="text-sm hover:text-yellow-500">Home</a>
