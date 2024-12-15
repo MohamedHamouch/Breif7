@@ -35,8 +35,8 @@ $contracts = mysqli_query($conn, $sql);
   <section class="py-8 bg-blue-600 text-white text-center min-h-[75vh]">
     <div class="container mx-auto">
       <h1 class="text-5xl font-bold mb-4">Our Contracts</h1>
-      <p class="text-xl mb-8">Explore the contracts we've established with our clientsgit.</p>
-      <button id="add-client-btn"
+      <p class="text-xl mb-8">Explore the contracts we've established with our clients.</p>
+      <button id="add-contract-btn"
         class="px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-400 p-5 xl:p-3 w-fit m-auto mb-8"><i
           class="fa-solid fa-file-circle-plus"></i> Start Contract</button>
 
@@ -90,7 +90,7 @@ $contracts = mysqli_query($conn, $sql);
   </section>
 
   <section id="add-contract-popup"
-    class="flex fixed w-full h-full items-center justify-center top-0 backdrop-blur-md bg-black/70">
+    class="hidden fixed w-full h-full items-center justify-center top-0 backdrop-blur-md bg-black/70">
     <div class="items-center justify-center flex flex-col gap-4 bg-gray-200 py-8 px-12 rounded-lg">
       <button class="text-red-500 hover:text-red-700" id="close-add-popup">
         <i class="fa-solid fa-circle-xmark text-3xl"></i>
@@ -150,6 +150,8 @@ $contracts = mysqli_query($conn, $sql);
       <p>&copy; 2024 RentDrive. All rights reserved.</p>
     </div>
   </footer>
+
+  <script src="contracts.js"></script>
 </body>
 
 </html>
