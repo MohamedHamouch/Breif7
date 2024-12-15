@@ -63,7 +63,7 @@ $clients = mysqli_query($conn, $sql);
                 class="edit-client-btn bg-transparent border-0 p-0">';
           echo '<i class="fa-solid fa-pen-to-square text-yellow-500"></i>';
           echo '</button>';
-          echo '<form action="handel_forms/delete_client.php" method="POST" class="inline-block">';
+          echo '<form action="handel_forms/delete_client.php" method="POST" class="deleteForm">';
           echo '<button type="submit" name="client_id" value="' . $client['ID'] . '" class="bg-transparent border-0 p-0">';
           echo '<i class="fa-solid fa-trash text-red-500"></i></button>';
           echo '</form></div>';
