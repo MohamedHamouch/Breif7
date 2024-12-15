@@ -56,7 +56,7 @@ $cars = mysqli_query($conn, $sql);
                   data-cyear="' . $car['Year'] . '" 
                   class="edit-car-btn bg-yellow-500 text-black text-sm py-2 px-3 rounded hover:bg-yellow-600">';
           echo '<i class="fas fa-edit"></i> Edit</button>';
-          echo '<form action="handel_forms/delete_car.php" method="POST" class="inline-block">';
+          echo '<form action="handel_forms/delete_car.php" method="POST" class="deleteForm">';
           echo '<button type="submit" name="registration_number" value="' . $car['Reg_number'] . '" class="bg-red-500 text-white text-sm py-2 px-3 rounded hover:bg-red-600">';
           echo '<i class="fa-solid fa-trash"></i> Delete</button></form>';
           echo '</div></div>';

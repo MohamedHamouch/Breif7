@@ -51,3 +51,15 @@ closeEditBtn.addEventListener('click', () => {
   editCarPopup.classList.toggle('hidden');
 
 });
+
+const deleteForms = document.querySelectorAll('.deleteForm');
+deleteForms.forEach(form => {
+  form.addEventListener('submit', (event) => {
+
+    const confirmDelete = confirm('Are you sure you want to delete this car?');
+
+    if (!confirmDelete) {
+      event.preventDefault();
+    }
+  });
+});
