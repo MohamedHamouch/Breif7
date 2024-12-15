@@ -14,3 +14,21 @@ addContractBtn.addEventListener('click', () => {
   addContractPopup.classList.toggle('hidden');
 
 });
+
+
+//validate dates input
+
+const addContractForm = document.querySelector('#add-contract-form');
+const dateInputs = addContractForm.querySelectorAll('input[type="date"]');
+console.log(dateInputs);
+
+addContractForm.addEventListener('submit', (event) => {
+  const startDate = new Date(dateInputs[0].value);
+  const endDate = new Date(dateInputs[1].value);
+
+  if (endDate <= startDate) {
+    event.preventDefault();
+    alert('End date must be after the start date.');
+  }
+});
+

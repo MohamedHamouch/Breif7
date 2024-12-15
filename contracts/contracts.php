@@ -100,7 +100,7 @@ $cars = mysqli_query($conn, $sql);
         <i class="fa-solid fa-circle-xmark text-3xl"></i>
       </button>
 
-      <form action="handel_forms/add_contract.php" method="POST" class="flex flex-col gap-6">
+      <form action="handel_forms/add_contract.php" method="POST" id="add-contract-form" class="flex flex-col gap-6">
         <fieldset>
           <label for="start_date" class="block text-gray-800 font-semibold">Start Date</label>
           <input type="date" id="start_date" name="start_date" class="w-96 p-2 border rounded-lg" required>
@@ -122,7 +122,7 @@ $cars = mysqli_query($conn, $sql);
                 echo "<option value='{$client['ID']}'>{$client['Name']} (ID: {$client['ID']})</option>";
               }
             }
-            
+
             ?>
           </select>
         </fieldset>
