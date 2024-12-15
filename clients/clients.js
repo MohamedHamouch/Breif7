@@ -3,6 +3,8 @@
 const closeAddBtn = document.querySelector('#close-add-popup');
 const addClientPopup = document.querySelector('#add-client-popup');
 const addClientBtn = document.querySelector('#add-client-btn');
+const addForm = document.querySelector('#add-form');
+
 
 addClientBtn.addEventListener('click', () => {
   addClientPopup.classList.toggle('flex');
@@ -15,6 +17,30 @@ closeAddBtn.addEventListener('click', () => {
   addClientPopup.classList.toggle('hidden');
 
 });
+addForm.addEventListener('submit', function (event) {
+  const nameInput = document.querySelector('#name');
+  const nameValue = nameInput.value.trim();
+
+  const namePattern = /^[A-Za-z]+(?:\s[A-Za-z]+)*$/;
+
+  if (!namePattern.test(nameValue)) {
+    event.preventDefault(); 
+    alert('Name must contain only letters and spaces, with at least one letter.');
+    return
+  }
+
+  const phoneInput = document.querySelector('#phone');
+  const phoneValue = phoneInput.value.trim();
+
+  const phonePattern = /^\d{10}$/;
+
+  if (!phonePattern.test(phoneValue)) {
+    event.preventDefault();
+    alert('Phone number must contain 10 digits.');
+    return;
+  }
+
+});
 
 //EDIT
 
@@ -22,7 +48,7 @@ const closeEditBtn = document.querySelector('#close-edit-popup');
 const editClientPopup = document.querySelector('#edit-client-popup');
 const editClientBtns = document.querySelectorAll('.edit-client-btn');
 const submitEditBtn = document.querySelector('#submit-edit');
-const editForm = document.querySelector('#edit-Form');
+const editForm = document.querySelector('#edit-form');
 const inputs = editForm.querySelectorAll('input');
 // console.log(editClientBtns);
 
@@ -52,6 +78,29 @@ closeEditBtn.addEventListener('click', () => {
 
 });
 
+editForm.addEventListener('submit', function (event) {
+  const nameInput = document.querySelector('#edit-name');
+  const nameValue = nameInput.value.trim();
+
+  const namePattern = /^[A-Za-z]+(?:\s[A-Za-z]+)*$/;
+
+  if (!namePattern.test(nameValue)) {
+    event.preventDefault(); 
+    alert('Name must contain only letters and spaces, with at least one letter.');
+    return;
+  }
+
+  const phoneInput = document.querySelector('#edit-phone');
+  const phoneValue = phoneInput.value.trim();
+
+  const phonePattern = /^\d{10}$/;
+
+  if (!phonePattern.test(phoneValue)) {
+    event.preventDefault();
+    alert('Phone number must contain 10 digits.');
+    return;
+  }
+});
 
 //delete confirmation
 const deleteForms = document.querySelectorAll('.deleteForm');

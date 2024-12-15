@@ -86,7 +86,7 @@ $clients = mysqli_query($conn, $sql);
         <i class="fa-solid fa-circle-xmark text-3xl"></i>
       </button>
 
-      <form action="handel_forms/add_client.php" method="POST" class="flex flex-col gap-6">
+      <form action="handel_forms/add_client.php" method="POST" id="add-form" class="flex flex-col gap-6">
         <fieldset>
           <label for="name" class="block text-gray-800 font-semibold">Name</label>
           <input type="text" id="name" name="name" class="w-96 p-2 border rounded-lg" required>
@@ -116,20 +116,20 @@ $clients = mysqli_query($conn, $sql);
         <i class="fa-solid fa-circle-xmark text-3xl"></i>
       </button>
 
-      <form action="handel_forms/edit_client.php" method="POST" class="flex flex-col gap-6" id="edit-Form">
+      <form action="handel_forms/edit_client.php" method="POST" class="flex flex-col gap-6" id="edit-form">
         <fieldset>
           <label for="name" class="block text-gray-800 font-semibold">Name</label>
-          <input type="text" id="name" name="name" class="w-96 p-2 border rounded-lg" required>
+          <input type="text" id="edit-name" name="name" class="w-96 p-2 border rounded-lg" required>
         </fieldset>
 
         <fieldset>
           <label for="address" class="block text-gray-800 font-semibold">Address</label>
-          <input type="text" id="address" name="address" class="w-96 p-2 border rounded-lg" required>
+          <input type="text" id="edit-address" name="address" class="w-96 p-2 border rounded-lg" required>
         </fieldset>
 
         <fieldset>
           <label for="phone" class="block text-gray-800 font-semibold">Phone</label>
-          <input type="tel" id="phone" name="phone" class="w-96 p-2 border rounded-lg" required>
+          <input type="tel" id="edit-phone" name="phone" class="w-96 p-2 border rounded-lg" required>
         </fieldset>
 
         <button type="submit" id="submit-edit"
