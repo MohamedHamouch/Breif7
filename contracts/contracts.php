@@ -89,6 +89,51 @@ $contracts = mysqli_query($conn, $sql);
     </div>
   </section>
 
+  <section id="add-contract-popup"
+    class="flex fixed w-full h-full items-center justify-center top-0 backdrop-blur-md bg-black/70">
+    <div class="items-center justify-center flex flex-col gap-4 bg-gray-200 py-8 px-12 rounded-lg">
+      <button class="text-red-500 hover:text-red-700" id="close-add-popup">
+        <i class="fa-solid fa-circle-xmark text-3xl"></i>
+      </button>
+
+      <form action="handel_forms/add_contract.php" method="POST" class="flex flex-col gap-6">
+        <fieldset>
+          <label for="start_date" class="block text-gray-800 font-semibold">Start Date</label>
+          <input type="date" id="start_date" name="start_date" class="w-96 p-2 border rounded-lg" required>
+        </fieldset>
+
+        <fieldset>
+          <label for="end_date" class="block text-gray-800 font-semibold">End Date</label>
+          <input type="date" id="end_date" name="end_date" class="w-96 p-2 border rounded-lg" required>
+        </fieldset>
+
+        <fieldset>
+          <label for="client" class="block text-gray-800 font-semibold">Select Client</label>
+          <select id="client" name="client_id" class="w-96 p-2 border rounded-lg" required>
+            <option value="" disabled selected>Select a client</option>
+            <!-- Add PHP loop here to dynamically populate client options -->
+            <!-- Example: -->
+            <option value="1">John Doe</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <label for="car" class="block text-gray-800 font-semibold">Select Car</label>
+          <select id="car" name="car_id" class="w-96 p-2 border rounded-lg" required>
+            <option value="" disabled selected>Select a car</option>
+            <!-- Add PHP loop here to dynamically populate car options -->
+            <!-- Example: -->
+            <option value="ABC123">Toyota Corolla</option>
+          </select>
+        </fieldset>
+
+        <button type="submit"
+          class="bg-blue-500 text-white font-semibold py-2 px-4 w-1/3 rounded-lg hover:bg-blue-600">Confirm</button>
+      </form>
+
+    </div>
+  </section>
+
   <footer class="bg-gray-800 text-white py-8 px-4 h-[15vh]">
     <div class="container mx-auto flex justify-between items-center">
       <a href="../index.php" class="font-bold">
