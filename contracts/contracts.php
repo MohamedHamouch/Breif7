@@ -2,6 +2,10 @@
 include '../config_db.php';
 $sql = "SELECT * FROM contracts";
 $contracts = mysqli_query($conn, $sql);
+$sql = "SELECT Name, ID FROM clients";
+$clients = mysqli_query($conn, $sql);
+$sql = "SELECT * FROM cars";
+$cars = mysqli_query($conn, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -111,9 +115,15 @@ $contracts = mysqli_query($conn, $sql);
           <label for="client" class="block text-gray-800 font-semibold">Select Client</label>
           <select id="client" name="client_id" class="w-96 p-2 border rounded-lg" required>
             <option value="" disabled selected>Select a client</option>
-            <!-- Add PHP loop here to dynamically populate client options -->
-            <!-- Example: -->
-            <option value="1">John Doe</option>
+            <?php
+
+            if (mysqli_num_rows($clients) > 0) {
+              while ($client = mysqli_fetch_assoc($clients)) {
+                echo "<option value='{$client['ID']}'>{$client['Name']} (ID: {$client['ID']})</option>";
+              }
+            }
+            
+            ?>
           </select>
         </fieldset>
 
@@ -121,9 +131,15 @@ $contracts = mysqli_query($conn, $sql);
           <label for="car" class="block text-gray-800 font-semibold">Select Car</label>
           <select id="car" name="car_id" class="w-96 p-2 border rounded-lg" required>
             <option value="" disabled selected>Select a car</option>
-            <!-- Add PHP loop here to dynamically populate car options -->
-            <!-- Example: -->
-            <option value="ABC123">Toyota Corolla</option>
+
+            <?php
+            if (mysqli_num_rows($cars) > 0) {
+              while ($car = mysqli_fetch_assoc($cars)) {
+                echo "<option value='{$car['Reg_number']}'>{$car['Brand']}, {$car['Model']}. ({$car['Reg_number']})</option>";
+              }
+            }
+            ?>
+
           </select>
         </fieldset>
 
