@@ -129,7 +129,7 @@ $cars = mysqli_query($conn, $sql);
 
         <fieldset>
           <label for="car" class="block text-gray-800 font-semibold">Select Car</label>
-          <select id="car" name="car_id" class="w-96 p-2 border rounded-lg" required>
+          <select id="car" name="registration_number" class="w-96 p-2 border rounded-lg" required>
             <option value="" disabled selected>Select a car</option>
 
             <?php
