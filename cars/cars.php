@@ -80,7 +80,7 @@ $cars = mysqli_query($conn, $sql);
         <i class="fa-solid fa-circle-xmark text-3xl"></i>
       </button>
 
-      <form action="handel_forms/add_car.php" method="POST" class="flex flex-col gap-6">
+      <form action="handel_forms/add_car.php" method="POST" id="add-car-form" class="flex flex-col gap-6">
         <fieldset>
           <label for="registration_number" class="block text-gray-800 font-semibold">Registration Number</label>
           <input type="text" id="registration_number" name="registration_number" class="w-96 p-2 border rounded-lg"

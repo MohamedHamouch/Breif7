@@ -3,6 +3,7 @@
 const closeBtn = document.querySelector('#close-add-popup');
 const addCarPopup = document.querySelector('#add-car-popup');
 const addCarBtn = document.querySelector('#add-car-btn');
+const addForm = document.querySelector('#add-car-form');
 
 closeBtn.addEventListener('click', () => {
   addCarPopup.classList.toggle('flex');
@@ -13,6 +14,17 @@ addCarBtn.addEventListener('click', () => {
   addCarPopup.classList.toggle('flex');
   addCarPopup.classList.toggle('hidden');
 
+});
+
+addForm.addEventListener('submit', (event) => {
+  const yearInput = document.querySelector('#year');
+  const currentYear = new Date().getFullYear();
+  const year = parseInt(yearInput.value);
+
+  if (year < 1995 || year > currentYear) {
+    event.preventDefault();
+    alert(`Please enter a valid year between 1995 and ${currentYear}.`);
+  }
 });
 
 //Edit
@@ -28,7 +40,6 @@ editCarBtns.forEach(editBtn => {
   editBtn.addEventListener('click', () => {
 
     const { cbrand, cmodel, cyear } = editBtn.dataset;
-
     editCarPopup.classList.toggle('hidden');
     editCarPopup.classList.toggle('flex');
 
@@ -51,6 +62,19 @@ closeEditBtn.addEventListener('click', () => {
   editCarPopup.classList.toggle('hidden');
 
 });
+
+editForm.addEventListener('submit', function (event) {
+  const yearInput = document.querySelector('#edit-year');
+  const currentYear = new Date().getFullYear();
+  const year = parseInt(yearInput.value);
+
+  if (year < 1995 || year > currentYear) {
+    event.preventDefault();
+    alert(`Please enter a valid year between 1995 and ${currentYear}.`);
+  }
+});
+
+//Delete
 
 const deleteForms = document.querySelectorAll('.deleteForm');
 deleteForms.forEach(form => {
