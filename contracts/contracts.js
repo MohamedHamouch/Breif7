@@ -32,3 +32,25 @@ addContractForm.addEventListener('submit', (event) => {
   }
 });
 
+//EDIT
+const editContractBtns = document.querySelector('.edit-contract-btn');
+editContractBtns.forEach(editBtn => {
+  editBtn.addEventListener('click', () => {
+
+    alert('You are not allowed to edit a contract');
+  });
+});
+
+//DELETE
+
+const deleteForms = document.querySelectorAll('.deleteForm');
+deleteForms.forEach(form => {
+  form.addEventListener('submit', (event) => {
+
+    const confirmDelete = confirm('Are you sure you want to delete this contract?');
+
+    if (!confirmDelete) {
+      event.preventDefault();
+    }
+  });
+});
