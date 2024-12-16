@@ -33,11 +33,11 @@ addContractForm.addEventListener('submit', (event) => {
 });
 
 //EDIT
-const editContractBtns = document.querySelector('.edit-contract-btn');
+const editContractBtns = document.querySelectorAll('.edit-contract-btn');
 editContractBtns.forEach(editBtn => {
   editBtn.addEventListener('click', () => {
 
-    alert('You are not allowed to edit a contract');
+    alert('You are not allowed to edit contracts');
   });
 });
 
