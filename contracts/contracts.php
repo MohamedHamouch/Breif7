@@ -74,13 +74,12 @@ $cars = mysqli_query($conn, $sql);
           echo '<p>' . $client['Name'] . '</p>';
           echo '<p>' . $contract['Reg_number'] . '</p>';
 
-          echo '<button>
-          <i class="fa-solid fa-pen-to-square text-yellow-500"></i>
-        </button>
-        <button>
-          <i class="fa-solid fa-trash text-red-500"></i>
-        </button>
-        </div>';
+          echo '<button><i class="fa-solid fa-pen-to-square text-yellow-500"></i></button>';
+          echo '<form action="handel_forms/delete_contract.php" method="POST" class="deleteForm">
+                <button type="submit" name="cont_id" value="' . $contract['Cont_number'] .'">
+                <i class="fa-solid fa-trash text-red-500"></i>
+                </button>';
+          echo '</form></div>';
 
         }
 
